@@ -14,13 +14,15 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'majutsushi/tagbar'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set bg=light
 set mouse=a
+set incsearch
 set nohlsearch
 set clipboard=unnamedplus
 " Some basics:
