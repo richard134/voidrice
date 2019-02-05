@@ -415,4 +415,20 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 bindsym XF86WLAN		exec $netrefresh
 
 # more?
-bindsym $mod+Shift+V layout toggle all
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# move floating with mouse
+floating_modifier $mod
+
+# Move workspaces
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+j move workspace to output down
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+c move workspace to output current
+bindsym $mod+Ctrl+p move workspace to output primary
+
+# Layouts
+bindsym $mod+Ctrl+e layout toggle split
+bindsym $mod+Ctrl+w layout toggle tabbed split
+bindsym $mod+Ctrl+s layout toggle stacking split
