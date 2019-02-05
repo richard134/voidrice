@@ -10,6 +10,13 @@ Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
+" proposals
+Plug 'junegunn/fzf.vim'
+Plug 'craigemery/vim-autotag'
+Plug 'majutsushi/tagbar'
+Plug 'ervandew/supertab'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set bg=light
@@ -22,6 +29,12 @@ set clipboard=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+
+" Tab style
+	set tabstop=8 softtabstop=4 shiftwidth=4 expandtab smarttab
+"" show tabs/spaces
+        map <leader>t :set listchars=space:␣,tab:>· list<CR>
+
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -101,6 +114,23 @@ set clipboard=unnamedplus
 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 	map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" ctags
+	"set tags=./tags,tags;$HOME
+
+        let g:autotagTagsFile="tags"
+" Tagbar
+	nmap <F8> :TagbarToggle<CR>
+
+" Syntastic
+"        set statusline+=%#warningmsg#
+"        set statusline+=%{SyntasticStatuslineFlag()}
+"        set statusline+=%*
+"
+"        let g:syntastic_always_populate_loc_list = 1
+"        let g:syntastic_auto_loc_list = 1
+"        let g:syntastic_check_on_open = 1
+"        let g:syntastic_check_on_wq = 0
 
 """LATEX
 	" Word count:
