@@ -12,7 +12,8 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 " proposals
 Plug 'junegunn/fzf.vim'
-Plug 'craigemery/vim-autotag'
+Plug 'szw/vim-tags'
+Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 "Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
@@ -31,6 +32,9 @@ set clipboard=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+
+" grep
+        nnoremap <F4> :grep! "\<<cword>\>" . -r<CR>:copen<CR>
 
 " Tab style
 	set tabstop=8 softtabstop=4 shiftwidth=4 expandtab smarttab
@@ -118,9 +122,10 @@ set clipboard=unnamedplus
 	map <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " ctags
-	"set tags=./tags,tags;$HOME
+	set tags=./tags,tags;$HOME
+        nnoremap <leader>. :CtrlPTag<cr>
+        nnoremap <silent> <Leader>l :TagbarToggle<CR>
 
-        let g:autotagTagsFile="tags"
 " Tagbar
 	nmap <F8> :TagbarToggle<CR>
 
