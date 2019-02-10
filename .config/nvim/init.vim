@@ -13,9 +13,7 @@ Plug 'tpope/vim-commentary'
 " proposals
 Plug 'junegunn/fzf.vim'
 Plug 'szw/vim-tags'
-Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
-"Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
@@ -33,6 +31,8 @@ set clipboard=unnamedplus
 	set encoding=utf-8
 	set number relativenumber
 
+" gopass
+        au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 " grep
         nnoremap <F4> :grep! "\<<cword>\>" . -r<CR>:copen<CR>
 
