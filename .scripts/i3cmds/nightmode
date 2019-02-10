@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -x "$(command -v redshift -V)" ]; then
+
+    if  pgrep -x redshift >/dev/null ; then
+        pkill -f redshift && notify-send -i "/usr/share/icons/hicolor/scalable/apps/redshift-status-off.svg" "Redshift toggled off"
+    else
+        redshift &disown && notify-send -i "/usr/share/icons/hicolor/scalable/apps/redshift-status-on.svg" "Redshift toggled on"
+    fi
+
+else
+    notify-send "Redshift not installed"
+    exit 1
+fi
