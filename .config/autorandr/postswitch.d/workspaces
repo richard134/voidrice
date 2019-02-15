@@ -1,0 +1,13 @@
+#!/bin/sh
+sleep 1
+setbg		# Fix background if screen size/arangement has changed.
+remaps		# Re-remap keys if keyboard added (for laptop bases)
+pgrep -x dunst >/dev/null && killall dunst && setsid dunst & # Restart dunst to ensure proper location on screen
+
+# move main workspaces to primary display
+i3-msg "[workspace=1] move workspace to output primary"
+i3-msg "[workspace=2] move workspace to output primary"
+i3-msg "[workspace=3] move workspace to output primary"
+i3-msg "[workspace=4] move workspace to output primary"
+i3-msg "[workspace=5] move workspace to output primary"
+i3-msg "[workspace=0] move workspace to output primary"
