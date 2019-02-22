@@ -12,7 +12,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 " proposals
 Plug 'junegunn/fzf.vim'
-Plug 'szw/vim-tags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
