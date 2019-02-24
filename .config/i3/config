@@ -296,7 +296,11 @@ no_focus [title="mpvfloat"]
 bindsym $mod+F1		exec --no-startup-id groff -kejpt -mom ~/.readme.mom -Tpdf | zathura -
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
+<<<<<<< Updated upstream
 bindsym $mod+Shift+F3	exec --no-startup-id autorandr --change --force
+=======
+bindsym $mod+ShiftF3	exec --no-startup-id autorandr --change
+>>>>>>> Stashed changes
 bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id torwrap
