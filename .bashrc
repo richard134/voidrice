@@ -4,7 +4,12 @@ shopt -s autocd #Allows you to cd into directory merely by typing the directory 
 HISTSIZE= HISTFILESIZE= # Infinite history.
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
+<<<<<<< HEAD
 [ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts" # Load shortcut aliases
 [ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
 
 setxkbmap us,se
+=======
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc" # Load shortcut aliases
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+>>>>>>> 29e2cdfb1032279e879a48bf37332a0014a77ae7

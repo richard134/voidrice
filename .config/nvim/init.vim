@@ -1,5 +1,11 @@
 let mapleader =","
 
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ~/.config/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+endif
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -10,6 +16,7 @@ Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
+<<<<<<< HEAD
 " proposals
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -17,14 +24,20 @@ Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
+=======
+Plug 'vifm/vifm.vim'
+>>>>>>> 29e2cdfb1032279e879a48bf37332a0014a77ae7
 call plug#end()
 
 set bg=light
+set go=a
 set mouse=a
 set incsearch
 set nohlsearch
 set clipboard=unnamedplus
+
 " Some basics:
+	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
 	syntax on
@@ -56,7 +69,7 @@ set clipboard=unnamedplus
 	set splitbelow splitright
 
 " Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
+	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " vimling:
@@ -110,11 +123,11 @@ set clipboard=unnamedplus
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
 
-" When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.bmdirs,~/.bmfiles !shortcuts
+" When shortcut files are updated, renew bash and vifm configs with new material:
+	autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
 " Navigating with guides
 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -250,4 +263,3 @@ set clipboard=unnamedplus
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
-
