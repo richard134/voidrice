@@ -16,7 +16,6 @@ Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
-<<<<<<< HEAD
 " proposals
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -24,9 +23,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
-=======
 Plug 'vifm/vifm.vim'
->>>>>>> 29e2cdfb1032279e879a48bf37332a0014a77ae7
 call plug#end()
 
 set bg=light
