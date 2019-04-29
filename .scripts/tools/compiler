@@ -14,7 +14,7 @@ cd "$dir" || exit
 
 textype() { \
 	command="pdflatex"
-	( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+	( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex --shell-escape -interaction=nonstopmode"
 	$command --output-directory="$dir" "$base" &&
 	grep -i addbibresource "$file" >/dev/null &&
 	biber --input-directory "$dir" "$base" &&
